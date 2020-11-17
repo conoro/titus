@@ -53,6 +53,7 @@
     "aws-sdk": "^2.797.0",
     "change-case": "^4.1.1",
     "mira": "^1.4.1",
+    "titus-admin-backend": "^1.0.0-alpha.1",
     "yup": "^0.30.0"
   },
   "jest": {

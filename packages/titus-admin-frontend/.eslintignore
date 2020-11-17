@@ -1,0 +1,9 @@
+bin/*
+build/*
+cjs/
+es/
+coverage/*
+node_modules/*
+src/**/*.css
+src/validateEnv.js
+src/validateEnv.test.js

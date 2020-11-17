@@ -8,6 +8,7 @@ const config = envSchema({
     .prop('NODE_ENV', S.string().required())
     .prop('API_HOST', S.string().required())
     .prop('API_PORT', S.string().required())
+    .prop('CORS_ORIGIN', S.string())
     .prop('PG_HOST', S.string().required())
     .prop('PG_PORT', S.string().required())
     .prop('PG_DB', S.string().required())
@@ -18,6 +19,7 @@ const config = envSchema({
     .prop('AUTH0_CLIENT_SECRET', S.string())
     .prop('AUTH0_AUDIENCE', S.string())
     .prop('AUTH0_GRANT_TYPE', S.string())
+    .prop('AUTH0_CONNECTION', S.string())
     .prop('COGNITO_REGION', S.string())
     .prop('COGNITO_USER_POOL_ID', S.string())
     .prop('JWT_SECRET', S.string().default('3000'))
@@ -49,7 +51,7 @@ module.exports = {
     idleTimeoutMillis: 30000
   },
   underPressure: {},
-  cors: { origin: !!config.CORS_ORIGIN },
+  cors: { origin: !!config.CORS_ORIGIN, credentials: true },
   auth: {
     provider: config.AUTH_PROVIDER || 'auth0',
     azureAD: {
@@ -58,11 +60,12 @@ module.exports = {
       tenant: config.AD_TENANT
     },
     auth0: {
-      domain: `https://${config.AUTH0_DOMAIN}`,
+      domain: config.AUTH0_DOMAIN,
       clientId: config.AUTH0_CLIENT_ID,
       clientSecret: config.AUTH0_CLIENT_SECRET,
       audience: config.AUTH0_AUDIENCE,
-      grantType: config.AUTH0_GRANT_TYPE
+      grantType: config.AUTH0_GRANT_TYPE,
+      connection: config.AUTH0_CONNECTION
     },
     cognito: {
       region: config.COGNITO_REGION,

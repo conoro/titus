@@ -1,5 +1,6 @@
 const config = {
   serverUrl: process.env.REACT_APP_API_PATH,
+  adminServerUrl: process.env.REACT_APP_ADMIN_API_PATH,
   env: process.env.NODE_ENV,
   publicUrl: process.env.PUBLIC_URL,
   remoteAwsConfigPath: process.env.REACT_APP_REMOTE_AWS_CONFIG_PATH,

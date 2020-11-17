@@ -75,7 +75,6 @@ input {
   line-height: 2.5rem;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
-  text-align: center;
   width: 100%;
 }
 
@@ -124,6 +123,7 @@ label {
   margin: 0 auto;
   max-width: 500px;
   padding: 0 1rem;
+  flex: 1;
 }
 
 .logout {

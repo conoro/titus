@@ -22,6 +22,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4",
     "regenerator-runtime": "^0.13.7",
+    "titus-admin-backend": "^1.0.0-alpha.1",
+    "titus-admin-frontend": "^1.0.0-alpha.1",
     "yup": "^0.30.0"
   },
   "scripts": {
